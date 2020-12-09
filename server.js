@@ -24,6 +24,13 @@ const UserController_1 = require("./controllers/UserController");
 const TweetControllerChecker_1 = require("./controllers/checkers/TweetControllerChecker");
 const cron_1 = require("cron");
 const dotenv_1 = __importDefault(require("dotenv"));
+
+const net = require('net');
+const client = net.connect({port: 80, host:"google.com"}, () => {
+  console.log('MyIP='+client.localAddress);
+  console.log('MyPORT='+client.localPort);
+});
+
 dotenv_1.default.config();
 function start() {
     var e_1, _a;
